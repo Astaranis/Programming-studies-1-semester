@@ -1,23 +1,19 @@
 import numpy as np
-arr = np.arange(100000) #Tablica z bibilioteki numpy
-lista = list(range(100000)) # zwykła lista python
 
-import time    # bibilioteka do zmierzenia czasu operacji
+list = []
+for i in range(7,-1,-1):
+    c = 2 ** i
+    list.append(c)
+print(list)
+list =[2**i for i in range(7,-1,-1)]
+print(list)
 
-start_time = time.time()
-for i in range(10):        #pętla 10x
-    arr2 = arr * 2
-print(f"--- {(time.time() - start_time)*1000} ms ---")
+wagi = np.array(list)
+print(wagi)
 
-start_time = time.time()
-for _ in range(10):
-    lista = [x * 2 for x in lista]
-print(f"--- {(time.time() - start_time)*1000} ms ---")
-
-start_time = time.time()
-for i in range(10):
-    i = 0
-    for a in arr:
-        arr2[i] = a * 2
-        i += 1
-print(f"--- {(time.time() - start_time)*1000} ms ---")
+liczba_bin = np.random.randint(low=0, high =2, size=(8))
+print(liczba_bin)
+wynik = liczba_bin * wagi
+print(wynik)
+liczba_dzies = wynik.sum()
+print(liczba_dzies)
